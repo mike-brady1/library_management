@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Inventory - Library Management</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .books-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .books-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .books-header h1 {
+            font-size: 28px;
+            color: #333;
+        }
+        .btn-add {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .btn-add:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+        }
+        table th {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        table tr:hover {
+            background-color: #f0f0f0;
+        }
+        .btn-edit, .btn-delete {
+            padding: 6px 12px;
+            margin-right: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn-edit {
+            background-color: #2196F3;
+            color: white;
+        }
+        .btn-edit:hover {
+            background-color: #0b7dda;
+        }
+        .btn-delete {
+            background-color: #f44336;
+            color: white;
+        }
+        .btn-delete:hover {
+            background-color: #da190b;
+        }
+        .no-books {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="books-container">
+        <div class="books-header">
+            <h1>📚 Book Inventory</h1>
+            <a href="add_book.html" class="btn-add">+ Add New Book</a>
+        </div>
+
+        <div id="books-list"></div>
+    </div>
+
+    <script src="../js/books_list.js"></script>
+</body>
+</html>
+
