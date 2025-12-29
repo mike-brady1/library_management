@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book - Library Management</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-container h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #2196F3;
+            box-shadow: 0 0 5px rgba(33, 150, 243, 0.3);
+        }
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .btn-submit {
+            background-color: #2196F3;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .btn-submit:hover {
+            background-color: #0b7dda;
+        }
+        .btn-cancel {
+            background-color: #999;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .btn-cancel:hover {
+            background-color: #777;
+        }
+        .error {
+            color: #f44336;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .success {
+            color: #4CAF50;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>✏️ Edit Book</h1>
+        
+        <div id="loading" class="loading">Loading book data...</div>
+        
+        <form id="edit-book-form" style="display: none;">
+            <input type="hidden" id="book-id" name="book_id">
+
+            <div class="form-group">
+                <label for="title">Book Title *</label>
+                <input type="text" id="title" name="title" required>
+                <span class="error" id="error-title"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="author">Author *</label>
+                <input type="text" id="author" name="author" required>
+                <span class="error" id="error-author"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="isbn">ISBN *</label>
+                <input type="text" id="isbn" name="isbn" required>
+                <span class="error" id="error-isbn"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="year">Publication Year</label>
+                <input type="number" id="year" name="year" min="1000" max="2099">
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity *</label>
+                <input type="number" id="quantity" name="quantity" min="0" required>
+                <span class="error" id="error-quantity"></span>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">Update Book</button>
+                <a href="books_list.html" class="btn-cancel">Cancel</a>
+            </div>
+
+            <span class="error" id="error-general"></span>
+            <span class="success" id="success-message"></span>
+        </form>
+    </div>
+
+    <script src="../js/edit_book.js"></script>
+</body>
+</html>
+
